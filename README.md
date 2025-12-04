@@ -10,6 +10,26 @@ Antes de ejecutar el proyecto, asegúrate de tener instalados:
 - npm
 - PostgreSQL v14 o superior
 
+## Arquitectura del proyecto (MVC extendido)
+
+El proyecto sigue una arquitectura MVC, con una capa adicional de servicios para mantener el código modular, escalable y claro.
+
+### Models
+Definen las entidades y la estructura de la base de datos usando Sequelize, incluyendo atributos, tipos de datos y relaciones.
+
+### Controllers
+Reciben las solicitudes HTTP, validan datos, llaman a los servicios y devuelven respuestas JSON. Funcionan como puente entre el cliente y la lógica de negocio.
+
+### Services
+Contienen la lógica de negocio de la aplicación. Los controladores delegan en esta capa toda la lógica para mantenerlos limpios y reutilizables.
+
+### Routes
+Mapean los endpoints de la API y enlazan cada ruta con su controlador correspondiente.
+
+### Config
+Módulos de configuración como la conexión a PostgreSQL, variables de entorno y ajustes generales.
+
+
 ## Instalación
 
 1. Clona el repositorio y cámbiate a la rama pipeline:
