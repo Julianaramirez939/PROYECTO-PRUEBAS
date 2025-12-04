@@ -4,6 +4,14 @@ const security = require("eslint-plugin-security");
 module.exports = [
   js.configs.recommended,
   {
+    env: {
+      node: true,
+      es2021: true,
+      browser: true,       // <--- esto habilita document
+      jest: true,
+      "cypress/globals": true
+    },
+
     languageOptions: {
       sourceType: "commonjs",
       ecmaVersion: 2020,
