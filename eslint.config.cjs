@@ -21,13 +21,14 @@ module.exports = [
         beforeEach: "readonly",
         afterEach: "readonly",
         jest: "readonly",
-        cy: "readonly",          
-        Cypress: "readonly", 
+        cy: "readonly",
+        Cypress: "readonly",
       },
     },
 
-    plugins: ["security", "cypress"],
-
+    plugins: {
+      security,
+    },
 
     rules: {
       ...js.configs.recommended.rules,
