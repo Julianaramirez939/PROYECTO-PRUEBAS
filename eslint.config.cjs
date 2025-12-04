@@ -4,22 +4,21 @@ const security = require("eslint-plugin-security");
 module.exports = [
   js.configs.recommended,
   {
-    env: {
-      node: true,
-      es2021: true,
-      browser: true,       // <--- esto habilita document
-      jest: true,
-      "cypress/globals": true
-    },
-
     languageOptions: {
       sourceType: "commonjs",
       ecmaVersion: 2020,
       globals: {
+        // Node
         console: "readonly",
         module: "readonly",
         require: "readonly",
         process: "readonly",
+
+        // Browser
+        document: "readonly",
+        window: "readonly",
+
+        // Jest
         describe: "readonly",
         test: "readonly",
         it: "readonly",
@@ -29,6 +28,8 @@ module.exports = [
         beforeEach: "readonly",
         afterEach: "readonly",
         jest: "readonly",
+
+        // Cypress
         cy: "readonly",
         Cypress: "readonly",
       },
