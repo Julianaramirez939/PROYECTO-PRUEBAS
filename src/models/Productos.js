@@ -41,5 +41,4 @@ const Productos = sequelize.define(
   }
 );
 
-
 module.exports = Productos;

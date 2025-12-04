@@ -1,4 +1,3 @@
-/* ======== RESET SIMPLE ======== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +11,6 @@ body {
   color: #1f2937;
 }
 
-/* ======== TITULOS ======== */
 h1 {
   margin-bottom: 25px;
   text-align: center;
@@ -26,7 +24,6 @@ h2 {
   color: #374151;
 }
 
-/* ======== SECCIONES ======== */
 section {
   margin-bottom: 40px;
   background: #ffffff;
@@ -36,7 +33,6 @@ section {
   border: 1px solid #e5e7eb;
 }
 
-/* ======== FORMULARIOS ======== */
 form {
   display: flex;
   flex-wrap: wrap;
@@ -63,7 +59,6 @@ form select:focus {
   background: #fff;
 }
 
-/* ======== BOTONES ======== */
 button {
   padding: 10px 16px;
   border-radius: 8px;
@@ -94,7 +89,6 @@ button.secondary {
 button.secondary:hover {
   background: #4b5563;
 }
-
 
 table {
   width: 100%;
@@ -162,14 +156,12 @@ tr:hover td {
   color: #333;
 }
 
-
 @keyframes slideIn {
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
 
 @keyframes fadeOut {
   to {

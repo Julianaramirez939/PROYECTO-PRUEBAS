@@ -5,13 +5,13 @@ const { sequelize } = require("../../src/models");
 let server;
 
 beforeAll(async () => {
-  await sequelize.sync({ force: true }); // sincroniza la DB
-  server = app.listen(4000); // levantar servidor temporal
+  await sequelize.sync({ force: true }); 
+  server = app.listen(4000); 
 });
 
 afterAll(async () => {
-  await sequelize.close(); // cerrar DB
-  server.close(); // cerrar servidor temporal
+  await sequelize.close();
+  server.close(); 
 });
 
 describe("E2E - Categorías", () => {

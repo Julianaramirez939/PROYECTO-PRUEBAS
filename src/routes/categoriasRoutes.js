@@ -1,20 +1,20 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const categoriasController = require('../controllers/categoriasController');
+const categoriasController = require("../controllers/categoriasController");
 
 // Crear categoría
-router.post('/', categoriasController.crearCategoria);
+router.post("/", categoriasController.crearCategoria);
 
 // Obtener todas las categorías
-router.get('/', categoriasController.obtenerCategorias);
+router.get("/", categoriasController.obtenerCategorias);
 
 // Obtener una categoría por ID
-router.get('/:id', categoriasController.obtenerCategoriaPorId);
+router.get("/:id", categoriasController.obtenerCategoriaPorId);
 
 // Actualizar una categoría
-router.put('/:id', categoriasController.actualizarCategoria);
+router.put("/:id", categoriasController.actualizarCategoria);
 
 // Eliminar una categoría
-router.delete('/:id', categoriasController.eliminarCategoria);
+router.delete("/:id", categoriasController.eliminarCategoria);
 
 module.exports = router;

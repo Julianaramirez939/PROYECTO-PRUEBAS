@@ -7,10 +7,8 @@ let server;
 beforeAll(async () => {
   await sequelize.sync({ force: true });
 
-  // Crear categoría inicial
   await Categorias.create({ nombre: "Ropa" });
 
-  // Levantar servidor temporal para supertest
   server = app.listen(4001);
 });
 

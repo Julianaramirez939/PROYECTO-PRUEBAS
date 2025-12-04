@@ -1,10 +1,8 @@
 const { Categorias, Productos } = require("../models");
 
-// Crear categoría con validación de nombre repetido
 const crearCategoria = async (data) => {
   const { nombre } = data;
 
-  // Verificar si ya existe
   const existente = await Categorias.findOne({ where: { nombre } });
   if (existente) {
     throw new Error("Ya existe una categoría con este nombre");
@@ -14,19 +12,16 @@ const crearCategoria = async (data) => {
   return categoria;
 };
 
-// Obtener todas
 const obtenerCategorias = async () => {
   const categorias = await Categorias.findAll();
   return categorias;
 };
 
-// Obtener por ID
 const obtenerCategoriaPorId = async (id) => {
   const categoria = await Categorias.findByPk(id);
   return categoria;
 };
 
-// Actualizar categoría con validación de duplicado
 const actualizarCategoria = async (id, data) => {
   const categoria = await Categorias.findByPk(id);
   if (!categoria) {
@@ -47,14 +42,12 @@ const actualizarCategoria = async (id, data) => {
   return categoriaActualizada;
 };
 
-// ❌ NO permitir eliminar categorías con productos asociados
 const eliminarCategoria = async (id) => {
   const categoria = await Categorias.findByPk(id);
   if (!categoria) {
     throw new Error("Categoría no encontrada");
   }
 
-  // Buscar si la categoría tiene productos
   const productosAsociados = await Productos.findOne({
     where: { categoria_id: id },
   });

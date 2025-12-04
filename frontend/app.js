@@ -114,12 +114,10 @@ async function cargarProductos() {
     tablaProductos.innerHTML = "";
 
     productos.forEach((p) => {
-      // p.Categoria puede ser null si no hay relación
       const nombreCategoria = p.Categoria
         ? p.Categoria.nombre
         : "Sin categoría";
 
-      // Asegurar que el precio tenga dos decimales
       const precioFormateado = parseFloat(p.precio).toFixed(2);
 
       tablaProductos.innerHTML += `
