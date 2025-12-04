@@ -22,7 +22,14 @@ const crearProducto = async (data) => {
 
 // Obtener todos
 const obtenerProductos = async () => {
-  const productos = await Productos.findAll();
+  const productos = await Productos.findAll({
+    include: [
+      {
+        model: Categorias,
+        attributes: ["id", "nombre"], 
+      },
+    ],
+  });
   return productos;
 };
 
