@@ -31,7 +31,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.19.0
+          node-version: 18.16.0   # <-- Cambiado de 18.19.0 a 18.16.0
 
       - name: Wait for Postgres to be ready
         run: |
@@ -89,9 +89,6 @@ jobs:
             fi
             sleep 2
           done
-
-      - name: Install Cypress dependencies
-        run: npm install cypress --save-dev
 
       - name: Run Cypress E2E tests
         run: |
