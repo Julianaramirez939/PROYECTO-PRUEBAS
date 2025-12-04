@@ -26,10 +26,8 @@ module.exports = [
       },
     },
 
-    plugins: {
-      security,
-      cypress: true
-    },
+    plugins: ["security", "cypress"],
+
 
     rules: {
       ...js.configs.recommended.rules,
