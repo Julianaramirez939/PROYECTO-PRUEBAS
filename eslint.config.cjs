@@ -21,11 +21,14 @@ module.exports = [
         beforeEach: "readonly",
         afterEach: "readonly",
         jest: "readonly",
+        cy: "readonly",          
+        Cypress: "readonly", 
       },
     },
 
     plugins: {
       security,
+      cypress: true
     },
 
     rules: {
